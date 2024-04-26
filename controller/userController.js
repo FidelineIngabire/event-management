@@ -45,7 +45,7 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 })
 
-const updateUser = asyncHandler(async (req, res) => {
+const editUser = asyncHandler(async (req, res) => {
   const { _id } = req.user;
   validateMongoDbId(_id);
   try {
@@ -80,4 +80,4 @@ const deleteUser = asyncHandler(async (req, res) => {
     throw new Error(error);
   }
 });
-module.exports = {newUser,loginUser,updateUser,deleteUser}
+module.exports = {newUser,loginUser,editUser,deleteUser}
