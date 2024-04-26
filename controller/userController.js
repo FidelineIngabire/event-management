@@ -1,12 +1,10 @@
 const User = require('../models/userModel')
-const generateRefreshToken  = require("../config/refreshToken");
-const { generatedToken } = require("../config/jwtToken");
 const asyncHandler = require("express-async-handler");
 
-const createUser = asyncHandler(async (req,res)=>{
+const newUser = asyncHandler(async (req,res)=>{
   const email = req.body.email
-  const findUser = await User.findOne({email})
-  if (!findUser) {
+  const createdUser = await User.findOne({email})
+  if (!createdUser) {
       const newUser = await User.create(req.body);
       res.status(201).json({
         msg: "User created",
@@ -82,4 +80,4 @@ const deleteUser = asyncHandler(async (req, res) => {
     throw new Error(error);
   }
 });
-module.exports = {createUser,loginUser,updateUser,deleteUser}
+module.exports = {newUser,loginUser,updateUser,deleteUser}
