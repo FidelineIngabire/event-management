@@ -9,4 +9,17 @@ const newEvent = errorHandler(async (req, res) => {
     throw new Error(error);
   }
 });
-module.exports = { newEvent };
+
+const editEvent = errorHandler(async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const editEvent = await Event.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
+      res.json(editEventEvent);
+    } catch (error) {
+      throw new Error(error);
+    }
+  });
+module.exports = { newEvent,editEvent };
