@@ -13,8 +13,8 @@ dbConnect()
 // const userRoute = require('./routes/userRoute')
 // const eventRoute = require('./routes/eventRoute')
 // const bookingRoute = require('./routes/bookingRoute')
-// app.use('/api/user',userRoute)
-// app.use('/api/event',eventRoute)
+app.use('/api/user',userRoute)
+app.use('/api/event',eventsRoute)
 // app.use('/api/booking',bookingRoute)
 // app.use(notFound);
 // app.use(errorHandler);

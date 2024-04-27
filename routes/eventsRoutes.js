@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {newEvent} = require('../controller/eventController')
+const {newEvent,editEvent} = require('../controller/eventsController')
 router.post('/',newEvent)
+router.delete('/:id/edit', editEvent)
+
 
