@@ -80,4 +80,4 @@ const removeUser = asyncHandler(async (req, res) => {
     throw new Error(error);
   }
 });
-module.exports = {newUse,loginUser,editUser,removeUser}
+module.exports = {newUser,loginUser,editUser,removeUser}
